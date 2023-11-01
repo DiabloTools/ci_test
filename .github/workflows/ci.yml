@@ -8,6 +8,9 @@ on:
       - .github/workflows
   pull_request:
     branches: [ "master" ]
+    paths:
+      - checksum
+      - .github/workflows
 
 jobs:
   build:
