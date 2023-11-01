@@ -4,13 +4,13 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - checksum
-      - .github/workflows
+      - checksum/**
+      - .github/workflows/**
   pull_request:
     branches: [ "master" ]
     paths:
-      - checksum
-      - .github/workflows
+      - checksum/**
+      - .github/workflows/**
 
 jobs:
   build:
