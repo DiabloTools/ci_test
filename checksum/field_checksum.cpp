@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 
 uint32_t checksum(std::string str) {
@@ -9,8 +10,6 @@ uint32_t checksum(std::string str) {
 }
 
 int main(int argc, char *argv[]) {
-  std::string tmp = "";
-
   for (int c = 1; c < argc; c++) {
     std::cout << std::hex << (checksum(argv[c]) & 0xFFFFFFF)<< std::dec << ": " << argv[c] << std::endl;
   }

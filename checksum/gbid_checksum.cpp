@@ -1,5 +1,6 @@
-#include <iostream>
 #include <algorithm>
+#include <cstdint>
+#include <iostream>
 
 uint32_t checksum(std::string str) {
   std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
@@ -12,8 +13,6 @@ uint32_t checksum(std::string str) {
 }
 
 int main(int argc, char *argv[]) {
-  std::string tmp = "";
-
   for (int c = 1; c < argc; c++) {
     std::cout << std::hex << checksum(argv[c])<< std::dec << ": " << argv[c] << std::endl;
   }
