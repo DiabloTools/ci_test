@@ -53,6 +53,12 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+    - name: Use libc++
+      if: ${{ matrix.cpp_compiler == 'clang++' }}
+      shell: bash
+      run: |
+        echo "CXXFLAGS=-stdlib=libc++" >> $GITHUB_ENV
+
     - name: Configure CMake
       run: >
         cmake -B ${{ steps.strings.outputs.build-output-dir }}
